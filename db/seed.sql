@@ -1,3 +1,9 @@
+DROP TABLE IF EXISTS comment;
+
+DROP TABLE IF EXISTS recipe;
+
+DROP TABLE IF EXISTS auth_user;
+
 CREATE TABLE auth_user (
     user_id SERIAL PRIMARY KEY,
     email VARCHAR(150) not null,
@@ -19,7 +25,8 @@ CREATE TABLE recipe (
 
 CREATE TABLE comment (
     comment_id SERIAL PRIMARY KEY,
-    comment VARCHAR(250),
+    content VARCHAR(250),
+    date_created TIMESTAMP,
     user_id INT REFERENCES auth_user(user_id),
     recipe_id INT REFERENCES recipe(recipe_id)
 );
