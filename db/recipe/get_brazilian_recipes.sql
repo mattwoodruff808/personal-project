@@ -1,2 +1,2 @@
 SELECT recipe_pic, title FROM recipe
-WHERE category = 'American';
+WHERE category = 'Brazilian';
