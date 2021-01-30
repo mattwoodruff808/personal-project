@@ -2,6 +2,8 @@ require('dotenv').config();
 const express = require('express'),
       session = require('express-session'),
       massive = require('massive'),
+      authCtrl = require('./controllers/authController'),
+      recCtrl = require('./controllers/recipeController'),
       {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
       app = express();
 
@@ -22,8 +24,16 @@ massive({
 })
 
 //Auth Endpoints
+app.post('/api/register', authCtrl.register);
+app.post('/api/login', authCtrl.login);
+app.get('/api/logout', authCtrl.logout);
 
 //Recipe Endpoints
+app.get('/api/landing-recipes', recCtrl.getLandingRecipes);
+app.get('/api/all-recipes', recCtrl.getAllRecipes);
+app.get('/api/category', recCtrl.getCategoryRecipes);
+app.get('/api/recipe', recCtrl.getRecipe);
+app.get('/api/about-pic', recCtrl.getAboutPic);
 
 //Comment Endpoints
 
