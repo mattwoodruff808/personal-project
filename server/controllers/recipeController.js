@@ -15,7 +15,13 @@ module.exports = {
         const {american, brazilian} = req.query;
         const db = req.app.get('db');
 
-        
+        if (american){
+            return db.recipe.get_american_recipes()
+                    .then(recipes => res.status(200).send(recipes));
+        } else if (brazilian){
+            return db.recipe.get_brazilian_recipes()
+                    .then(recipes => res.status(200).send(recipes));
+        }
     },
     getRecipe: (req, res) => {
         const db = req.app.get('db');
