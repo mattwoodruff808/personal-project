@@ -3,7 +3,10 @@ const express = require('express'),
       session = require('express-session'),
       massive = require('massive'),
       authCtrl = require('./controllers/authController'),
+      auth = require('./middleware/authMiddleware'),
       recCtrl = require('./controllers/recipeController'),
+      comCtrl = require('./controllers/commentController'),
+      profCtrl = require('./controllers/profileController'),
       {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
       app = express();
 
@@ -32,9 +35,16 @@ app.get('/api/logout', authCtrl.logout);
 app.get('/api/landing-recipes', recCtrl.getLandingRecipes);
 app.get('/api/all-recipes', recCtrl.getAllRecipes);
 app.get('/api/category', recCtrl.getCategoryRecipes);
-app.get('/api/recipe', recCtrl.getRecipe);
+app.get('/api/recipe/:recipeId', recCtrl.getRecipe);
 app.get('/api/about-pic', recCtrl.getAboutPic);
 
 //Comment Endpoints
+app.post('/api/comment/:recipeId', auth.usersOnly, comCtrl.addComment);
+app.get('/api/comments/:recipeId', auth.usersOnly, comCtrl.getComments);
+app.put('/api/comment/:commentId', auth.usersOnly, comCtrl.editComment);
+app.delete('/api/comment/:commentId', auth.usersOnly, comCtrl.deleteComment);
+
+//Profile Endpoints
+app.put('/api/profile-pic/:userId', auth.usersOnly, profCtrl.changeProfilePic);
 
 app.listen(SERVER_PORT, () => console.log(`Server is cooking up on port ${SERVER_PORT}`));
