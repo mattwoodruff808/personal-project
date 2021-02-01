@@ -1,3 +1,4 @@
+import {connect} from 'react-redux';
 import './Comments.css';
 
 const Comments = (props) => {
@@ -8,4 +9,6 @@ const Comments = (props) => {
     )
 }
 
-export default Comments;
+const mapStateToProps = reduxState => reduxState;
+
+export default connect(mapStateToProps)(Comments);

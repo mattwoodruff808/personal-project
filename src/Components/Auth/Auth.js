@@ -1,3 +1,5 @@
+import {connect} from 'react-redux';
+import {getUser} from '../../redux/userReducer';
 import './Auth.css';
 
 const Auth = (props) => {
@@ -8,4 +10,4 @@ const Auth = (props) => {
     )
 }
 
-export default Auth;
+export default connect(null, {getUser})(Auth);
