@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 import Random from './Random/Random';
 import './Landing.css';
 
