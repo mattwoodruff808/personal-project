@@ -32,9 +32,8 @@ app.post('/api/login', authCtrl.login);
 app.get('/api/logout', authCtrl.logout);
 
 //Recipe Endpoints
-app.get('/api/landing-recipes', recCtrl.getLandingRecipes);
-app.get('/api/all-recipes', recCtrl.getAllRecipes);
-app.get('/api/category', recCtrl.getCategoryRecipes);
+app.get('/api/landing-recipe', recCtrl.getLandingRecipes);
+app.get('/api/recipe', recCtrl.getRecipes);
 app.get('/api/recipe/:recipeId', recCtrl.getRecipe);
 app.get('/api/about-pic', recCtrl.getAboutPic);
 
