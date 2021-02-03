@@ -2,9 +2,13 @@ import axios from 'axios';
 
 const initialState = {
     recipe: {},
-    category: {}
+    category: {
+        // recipe_pic: 'URL HERE',
+        // title: 'Symphony Cake',
+        // category: 'American'
+    }
 }
-console.log(initialState)
+// console.log(initialState)
 
 const GET_RECIPE = 'GET_RECIPE';
 const GET_CATEGORY = 'GET_CATEGORY';

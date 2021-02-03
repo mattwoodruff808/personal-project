@@ -3,13 +3,12 @@ import { useState, useEffect } from 'react';
 import './Random.css';
 
 const Random = (props) => {
-    const [rand, setRand] = useState([])
+    const [rand, setRand] = useState([]);
 
     useEffect(() => {
         axios.get('/api/landing-recipe')
             .then(res => {
                 setRand(res.data);
-                console.log(res.data)
             })
     }, []);
 
