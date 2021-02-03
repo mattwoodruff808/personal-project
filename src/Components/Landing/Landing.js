@@ -13,6 +13,11 @@ const Landing = (props) => {
         props.getCategory('american');
         props.history.push('/categ');
     }
+    
+    const handleBrazilian = () => {
+        props.getCategory('brazilian');
+        props.history.push('/categ');
+    }
 
     return (
         <section>
@@ -25,7 +30,7 @@ const Landing = (props) => {
                     <ul>
                         <li name={null} onClick={handleAllRecipes}>All Recipes</li>
                         <li name='american' onClick={handleAmerican}>American</li>
-                        <li name='brazilian' >Brazilian</li>
+                        <li name='brazilian' onClick={handleBrazilian}>Brazilian</li>
                     </ul>
                 </aside>
                 <Random />

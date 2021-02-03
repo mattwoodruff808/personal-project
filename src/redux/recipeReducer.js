@@ -4,6 +4,7 @@ const initialState = {
     recipe: {},
     category: {}
 }
+console.log(initialState)
 
 const GET_RECIPE = 'GET_RECIPE';
 const GET_CATEGORY = 'GET_CATEGORY';

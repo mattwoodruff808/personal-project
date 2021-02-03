@@ -3,11 +3,11 @@ import Options from './Options/Options';
 import './Category.css';
 
 const Category = (props) => {
-    console.log(props)
+    // console.log(props)
 
     return (
         <section>
-            <h1>{props.category.data[0].category}</h1>
+            Category
             <Options />
         </section>
     )
@@ -15,7 +15,7 @@ const Category = (props) => {
 
 const mapStateToProps = reduxState => {
     return {
-        category: reduxState.recipeReducer.category,
+        category: reduxState.recipeReducer.category
     }
 }
 
