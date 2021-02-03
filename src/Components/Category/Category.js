@@ -1,41 +1,67 @@
-import {useEffect, useState} from 'react';
+import {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import {getRecipe} from '../../redux/recipeReducer';
 import Options from './Options/Options';
 import './Category.css';
+import searchSvg from './image_search-24px.svg'
 
 const Category = (props) => {
-    console.log(props)
-    const [search, setSearch] = useState('');
-    const [recipes, setRecipes] = useState([]);
+    // console.log(props)
+    const [input, setInput] = useState('');
+    const [filtered, setFiltered] = useState([]);
+    console.log(filtered)
 
-    useEffect(() => {
-        setRecipes(props.category.data);
-        console.log(props.category.data)
-    }, [props.category.data]);
-
-    let mappedRecipes = recipes.map((el, i) => {
+    let mappedRecipes = props.category.map((el, i) => {
         return <Options key={i} recipePic={el.recipe_pic} title={el.title}/>
-    })
+    });
+
+    let filteredRecipes = filtered.map((el, i) => {
+        return <Options key={i} recipePic={el.recipe_pic} title={el.title}/>
+    });
+
+    const filterRecipes = (searchInp) => {
+        let filteredGroup = [];
+
+        props.category.filter(el => {
+            if (el.title.toLowerCase().includes(searchInp.toLowerCase())){
+                filteredGroup.push(el);
+            } 
+            return filteredGroup;
+        })
+        setFiltered(filteredGroup);
+    }
+
+    const clearSearch = () => {
+        setFiltered([]);
+        setInput('');
+    }
 
     return (
         <section>
-            {!props.category.data 
+            {props.category.length > 0 && props.category[0].category
                 ? 
                 (
-                    <h1>All Recipes</h1>
+                    <h1>{props.category[0].category}</h1>
                 ) 
                 : 
                 (
-                    <h1>{props.category.data[0].category}</h1>
+                    <h1>All Recipes</h1>
                 )}
             <input
-                value={search}
+                value={input}
                 placeholder='Enter Recipe'
-                onChange={(e) => setSearch(e.target.value)}/>
-            <button>Search Recipes</button>
-            <button>Clear Search</button>
-           {mappedRecipes}
+                onChange={(e) => setInput(e.target.value)}/>
+            <button onClick={() => filterRecipes(input)}>Search Recipes</button>
+            <button onClick={clearSearch}>Clear Search</button>
+           {filtered[0]
+                ? 
+                (
+                    filteredRecipes
+                ) 
+                : 
+                (
+                    mappedRecipes
+                )}
         </section>
     )
 }

@@ -2,11 +2,7 @@ import axios from 'axios';
 
 const initialState = {
     recipe: {},
-    category: {
-        // recipe_pic: 'URL HERE',
-        // title: 'Symphony Cake',
-        // category: 'American'
-    }
+    category: []
 }
 // console.log(initialState)
 
@@ -29,7 +25,11 @@ export function getCategory(selected){
         url = url + `?category=${selected}`;
     }
 
-    const category = axios.get(url);
+    const category = axios.get(url).then(res => {
+        // console.log(res.data);
+        return res.data;
+    });
+    // console.log(category)
 
     return {
         type: GET_CATEGORY,
