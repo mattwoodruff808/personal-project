@@ -15,7 +15,7 @@ const Random = (props) => {
     }, []);
 
     const handleDirection = (recipeId) => {
-        getRecipe(recipeId);
+        props.getRecipe(recipeId);
         props.pushFn('/recipe');
     }
 

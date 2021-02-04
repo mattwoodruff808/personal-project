@@ -9,7 +9,7 @@ const Recipe = (props) => {
 
     return (
         <section>
-            <h1>{props.recipe[0].title}</h1>
+            <h1>{props.recipe.length > 0 && props.recipe[0].title}</h1>
             <Ingredients />
             <Info />
             <Comments />
