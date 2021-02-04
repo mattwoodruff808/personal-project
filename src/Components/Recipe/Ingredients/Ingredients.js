@@ -5,11 +5,20 @@ import './Ingredients.css';
 const Ingredients = (props) => {
     return (
         <section>
-            Ingredients
+            <img src={props.recipe.length > 0 && props.recipe[0].recipe_pic}  
+                 alt={props.recipe.length > 0 && props.recipe[0].title}/>
+            <section>
+                <h3>Ingredients</h3>
+                {/* <p>{props.recipe.length > 0 && props.recipe[0].ingredients}</p> */}
+            </section>
         </section>
     )
 }
 
-const mapStateToProps = reduxState => reduxState;
+const mapStateToProps = reduxState => {
+    return {
+        recipe: reduxState.recipeReducer.recipe
+    }
+};
 
 export default connect(mapStateToProps, {getRecipe})(Ingredients);

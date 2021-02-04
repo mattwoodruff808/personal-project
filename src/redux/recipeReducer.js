@@ -10,10 +10,8 @@ const GET_CATEGORY = 'GET_CATEGORY';
 
 export function getRecipe(recipeId){
     const recipe = axios.get(`/api/recipe/${recipeId}`).then(res => {
-        // console.log(res.data);
         return res.data;
     });
-    // console.log(recipe);
 
     return {
         type: GET_RECIPE,
@@ -29,10 +27,8 @@ export function getCategory(selected){
     }
 
     const category = axios.get(url).then(res => {
-        // console.log(res.data);
         return res.data;
     });
-    // console.log(category)
 
     return {
         type: GET_CATEGORY,
