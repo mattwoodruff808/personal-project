@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import {connect} from 'react-redux';
+import {getRecipe} from '../../../redux/recipeReducer';
 import './Random.css';
 
 const Random = (props) => {
@@ -12,10 +14,15 @@ const Random = (props) => {
             })
     }, []);
 
+    const handleDirection = (recipeId) => {
+        getRecipe(recipeId);
+        props.pushFn('/recipe');
+    }
+
     let mappedRand = rand.map((el, i) => {
         return <main key={i}>
-                  <img src={el.recipe_pic} alt='recipe' />
-                  <h3>{el.blurb}</h3>
+                  <img src={el.recipe_pic} alt={el.title} onClick={() => handleDirection(el.recipe_id)} />
+                  <h3 onClick={() => handleDirection(el.recipe_id)}>{el.blurb}</h3>
                </main>
     })
 
@@ -27,4 +34,4 @@ const Random = (props) => {
     )
 }
 
-export default Random;
+export default connect(null, {getRecipe})(Random);

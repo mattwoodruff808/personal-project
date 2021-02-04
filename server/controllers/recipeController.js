@@ -23,7 +23,6 @@ module.exports = {
                 .then(recipes => res.status(200).send(recipes))
                 .catch(err => res.status(500).send(err));
         }
-
     },
     getRecipe: (req, res) => {
         const {recipeId} = req.params;

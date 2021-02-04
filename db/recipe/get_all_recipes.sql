@@ -1,1 +1,1 @@
-SELECT recipe_pic, title FROM recipe;
+SELECT recipe_id, recipe_pic, title FROM recipe;

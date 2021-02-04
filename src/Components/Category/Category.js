@@ -12,11 +12,19 @@ const Category = (props) => {
     console.log(filtered)
 
     let mappedRecipes = props.category.map((el, i) => {
-        return <Options key={i} recipePic={el.recipe_pic} title={el.title}/>
+        return <Options key={i}
+                        recipeId={el.recipe_id}
+                        recipePic={el.recipe_pic}
+                        title={el.title}
+                        pushFn={props.history.push}/>
     });
 
     let filteredRecipes = filtered.map((el, i) => {
-        return <Options key={i} recipePic={el.recipe_pic} title={el.title}/>
+        return <Options key={i}
+                        recipeId={el.recipe_id}
+                        recipePic={el.recipe_pic} 
+                        title={el.title}
+                        pushFn={props.history.push}/>
     });
 
     const filterRecipes = (searchInp) => {

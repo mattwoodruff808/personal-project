@@ -1,16 +1,19 @@
 import axios from 'axios';
 
 const initialState = {
-    recipe: {},
+    recipe: [],
     category: []
 }
-// console.log(initialState)
 
 const GET_RECIPE = 'GET_RECIPE';
 const GET_CATEGORY = 'GET_CATEGORY';
 
 export function getRecipe(recipeId){
-    const recipe = axios.get(`/api/recipe/${recipeId}`);
+    const recipe = axios.get(`/api/recipe/${recipeId}`).then(res => {
+        console.log(res.data);
+        return res.data;
+    });
+    console.log(recipe);
 
     return {
         type: GET_RECIPE,
@@ -57,3 +60,5 @@ export default function recipeReducer(state = initialState, action){
             return state;
     }
 }
+
+// console.log(initialState)

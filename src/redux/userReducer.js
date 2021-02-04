@@ -1,10 +1,5 @@
 const initialState = {
-    user: {
-        user_id: 1,
-        email: 'matt@matt.com',
-        username: 'Matt',
-        profile_pic: 'URL HERE'
-    }
+    user: {}
 }
 
 const GET_USER = 'GET_USER';

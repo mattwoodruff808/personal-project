@@ -33,7 +33,8 @@ const Landing = (props) => {
                         <li name='brazilian' onClick={handleBrazilian}>Brazilian</li>
                     </ul>
                 </aside>
-                <Random />
+                <Random 
+                    pushFn={props.history.push}/>
             </main>
         </section>
     )
