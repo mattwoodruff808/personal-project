@@ -44,17 +44,17 @@ CREATE TABLE comment (
 INSERT INTO recipe
 (title, category, recipe_pic, blurb, instructions, background)
 VALUES
-('Symphony Cake', 'American', 'Recipe URL HERE', 'The best cake to ever exist.', 'Just throw it all together.', 'This was created by Linda Meadows'),
-('Feijoada', 'Brazilian', '1Recipe URL HERE', 'Heaviest meal to exist.', '1Just throw it all together.', '1This was created by Linda Meadows'),
-('Hawaiian Haystacks', 'American', '2Recipe URL HERE', 'Legit just gravy on rice.', '2Just throw it all together.', '2This was created by Linda Meadows'),
-('Strogonoff', 'Brazilian', '3Recipe URL HERE', 'Heaven. Plain and simple.', '3Just throw it all together.', '3This was created by Linda Meadows'),
-('Potato Salad', 'American', '4Recipe URL HERE', 'TRADITIIIOOOONNN!!!', '4Just throw it all together.', '4This was created by Linda Meadows'),
-('Churrasco', 'Brazilian', '5Recipe URL HERE', 'Real BBQ', '5Just throw it all together.', '5This was created by Linda Meadows'),
-('Devona`s Tacos', 'American', '6Recipe URL HERE', 'Best. Tacos. Ever.', '6Just throw it all together.', '6This was created by Linda Meadows'),
-('Bolo de Brigadeiro', 'Brazilian', '7Recipe URL HERE', 'Dense, Delicious, Decadent Cake.', '7Just throw it all together.', '7This was created by Linda Meadows'),
-('Pulled Pork Sandwhiches', 'American', '8Recipe URL HERE', 'Phenomenal when smoked. Add cole-slaw.', '8Just throw it all together.', '8This was created by Linda Meadows'),
-('Suco de Maracuja', 'Brazilian', '9Recipe URL HERE', 'Xanax in a cup.', '9Just throw it all together.', '9This was created by Linda Meadows'),
-('Mashed Potatoes', 'American', '10Recipe URL HERE', 'A classic.', '10Just throw it all together.', '10This was created by Linda Meadows');
+('Symphony Cake', 'American', 'Recipe URL HERE', 'The best cake to ever exist.', 'Just throw it all together.', 'This was created by Linda Meadows.'),
+('Feijoada', 'Brazilian', '1Recipe URL HERE', 'Heaviest meal to exist.', 'Just throw it all together.', 'One of the best meals in Brazil, a Woodruff favorite.'),
+('Hawaiian Haystacks', 'American', '2Recipe URL HERE', 'Legit just gravy on rice.', 'Just throw it all together.', 'A classic that we have enjoyed since we were little!'),
+('Strogonoff', 'Brazilian', '3Recipe URL HERE', 'Heaven. Plain and simple.', 'Just throw it all together.', 'One of the tastiest, easiest, and cheapest meals we discovered in Brazil'),
+('Potato Salad', 'American', '4Recipe URL HERE', 'TRADITIIIOOOONNN!!!', 'Just throw it all together.', 'This recipe is sacred. From a cookbook Granny had in 1905.'),
+('Churrasco', 'Brazilian', '5Recipe URL HERE', 'Real BBQ', 'Just throw it all together.', 'This is one of the things I miss most about Brazil.'),
+('Devona`s Tacos', 'American', '6Recipe URL HERE', 'Best. Tacos. Ever.', 'Just throw it all together.', 'Grandmas taco recipe passed down from mother to son to daughter.'),
+('Bolo de Brigadeiro', 'Brazilian', '7Recipe URL HERE', 'Dense, Delicious, Decadent Cake.', 'Just throw it all together.', 'This heavy cake was at every birthday party we had in Brazil.'),
+('Pulled Pork Sandwhiches', 'American', '8Recipe URL HERE', 'Phenomenal when smoked. Add cole-slaw.', 'Just throw it all together.', 'John perfected these sandwhiches, and I dream about them.'),
+('Suco de Maracuja', 'Brazilian', '9Recipe URL HERE', 'Xanax in a cup.', 'Just throw it all together.', 'Need a good night sleep? This has put us to sleep on many occasions.'),
+('Mashed Potatoes', 'American', '10Recipe URL HERE', 'A classic.', 'Just throw it all together.', 'An american classic, enjoyed by many beyond just our famiy.');
 
 INSERT INTO ingredient
 (recipe_id, measurement, ingredient)
