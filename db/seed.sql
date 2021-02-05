@@ -27,8 +27,8 @@ CREATE TABLE recipe (
 CREATE TABLE ingredient (
     ingredient_id SERIAL PRIMARY KEY,
     recipe_id INT REFERENCES recipe(recipe_id),
-    ingredient VARCHAR(50),
-    amount VARCHAR(50)
+    measurement VARCHAR(50),
+    ingredient VARCHAR(50)
 );
 
 CREATE TABLE comment (
@@ -57,16 +57,38 @@ VALUES
 ('Mashed Potatoes', 'American', '10Recipe URL HERE', 'A classic.', '10Just throw it all together.', '10This was created by Linda Meadows');
 
 INSERT INTO ingredient
-(recipe_id, ingredient, amount)
+(recipe_id, measurement, ingredient)
 VALUES
-(1, ),
-(2, ),
-(3, ),
-(4, ),
-(5, ),
-(6, ),
-(7, ),
-(8, ),
-(9, ),
-(10, ),
-(11, ),
+(1, '1 Cake', 'Betty Crocker Fudge Cake'),
+(1, '1 Cup', 'Whole Milk'),
+(1, '1 Bar', 'Chocolate Symphony Bar'),
+(2, '3 Cups', 'Black Beans'),
+(2, '1 Package', 'Kielbasa Sausage'),
+(2, '1 Package', 'Bacon'),
+(3, '2 Breasts', 'Shredded Chicken'),
+(3, '2 Cans', 'Cream of Chicken Soup'),
+(3, '2 tsp', 'Salt'),
+(4, '2 Breasts', 'Shredded Chicken'),
+(4, '4 Tbsp', 'Ketchup'),
+(4, '2 Tbsp', 'Mustard'),
+(5, '12', 'Large Idaho Potatoes'),
+(5, '2 Cups', 'Mayo'),
+(5, '2 Tbsp', 'Vinegar'),
+(6, 'Plenty of', 'Meat'),
+(6, 'Plenty of', 'Sausage'),
+(6, 'Plenty of', 'French Bread'),
+(7, '1 Package', 'Corn Tortillas'),
+(7, '1 Package', 'Lean Ground Beef'),
+(7, '6 Cups', 'Canola Oil'),
+(8, '1 Cake', 'Betty Crocker Fudge Cake'),
+(8, '5 Cups', 'Brigadeiro Chocolate'),
+(8, '2 Cups', 'Chocolate Sprinkles'),
+(9, '2 Pounds', 'Pork Shoulder'),
+(9, '10 Tbsp', 'Mustard'),
+(9, 'Lots of', 'Pork Star Dry Rub'),
+(10, '5 Cups', 'Passion Fruit Pulp'),
+(10, '6 Cups', 'Chilled Water'),
+(10, '1 Cup', 'Sugar'),
+(11, '6 Medium', 'Yukon Gold Potatoes'),
+(11, '1 Stick', 'KerryGold Butter'),
+(11, '1 Cup', 'Whole Milk');
