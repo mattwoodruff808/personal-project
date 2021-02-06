@@ -5,8 +5,18 @@ import './Ingredients.css';
 const Ingredients = (props) => {
     console.log(props)
 
-    let filteredIngredients = props.recipe.filter(el => {
-        
+    let filteredIngredients = props.recipe.filter((el, i) => {
+        return {
+            key: i,
+            measurement: el.measurement,
+            ingredient: el.ingredient
+        }
+    })
+
+    let mappedFiltered = filteredIngredients.map((el, i) => {
+        return <section key={i}>
+            <p>{el.measurement} - {el.ingredient}</p>
+        </section>
     })
 
     return (
@@ -15,8 +25,7 @@ const Ingredients = (props) => {
                  alt={props.recipe.length > 0 && props.recipe[0].title}/>
             <section>
                 <h3>Ingredients</h3>
-                <p>{props.recipe.length > 0 && props.recipe[0].measurement}</p>
-                <p>{props.recipe.length > 0 && props.recipe[0].ingredient}</p>
+                {mappedFiltered}
             </section>
         </section>
     )

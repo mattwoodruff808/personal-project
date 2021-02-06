@@ -10,6 +10,7 @@ const Recipe = (props) => {
     return (
         <section>
             <h1>{props.recipe.length > 0 && props.recipe[0].title}</h1>
+            <p>{props.recipe.length > 0 && props.recipe[0].category}</p>
             <Ingredients />
             <Info />
             <Comments />

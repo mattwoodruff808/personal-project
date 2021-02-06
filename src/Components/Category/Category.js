@@ -9,7 +9,6 @@ const Category = (props) => {
     // console.log(props)
     const [input, setInput] = useState('');
     const [filtered, setFiltered] = useState([]);
-    console.log(filtered)
 
     let mappedRecipes = props.category.map((el, i) => {
         return <Options key={i}
