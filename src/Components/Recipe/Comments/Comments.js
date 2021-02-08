@@ -8,9 +8,12 @@ const Comments = (props) => {
     const [input, setInput] = useState('');
     const [comments, setComments] = useState([]);
     const [addView, setAddView] = useState(false);
+    const [editView, setEditView] = useState(false);
+    const [editContent, setEditContent] = useState('');
+    const [editId, setEditId] = useState(0);
 
     useEffect(() => {
-        getComments(props.recipe.length > 0 && props.recipe[0].recipe_id)
+        getComments(props.recipe.length > 0 ? props.recipe[0].recipe_id : null);
     }, []);
 
     const getComments = (recipeId) => {
@@ -33,20 +36,41 @@ const Comments = (props) => {
     }
 
     const editComment = () => {
-
+        axios.put(`/api/comment/${editId}`, {content: editContent})
+            .then(() => {
+                getComments(props.recipe.length > 0 && props.recipe[0].recipe_id)
+                cancelEditView();
+                setEditContent('');
+                setEditId(0);
+            })
+            .catch(err => console.log(err));
     }
 
     const deleteComment = () => {
-
+        axios.delete(`/api/comment/${editId}`)
+            .then(() => {
+                getComments(props.recipe.length > 0 && props.recipe[0].recipe_id);
+                cancelEditView();
+            })
     }
 
-    const toggleView = () => {
+    const toggleAddView = () => {
         setAddView(!addView);
     }
 
     const handleAdd = () => {
         addComment(props.recipe.length > 0 && props.recipe[0].recipe_id);
-        toggleView();
+        toggleAddView();
+    }
+
+    const toggleEditView = (commentId, content) => {
+        setEditView(!editView);
+        setEditId(commentId);
+        setEditContent(content);
+    }
+
+    const cancelEditView = () => {
+        setEditView(!editView);
     }
 
     let mappedComments = comments.map((el, i) => {
@@ -58,6 +82,7 @@ const Comments = (props) => {
             <main>
                 <p>{el.date_created}</p>
                 <p>{el.content}</p>
+                <p onClick={() => toggleEditView(el.comment_id, el.content)}>edit</p>
             </main>
         </section>
     })
@@ -76,7 +101,7 @@ const Comments = (props) => {
                             {!addView 
                                 ? 
                                 (
-                                    <button onClick={toggleView}>Add Comment</button>
+                                    <button onClick={toggleAddView}>Add Comment</button>
                                 ) 
                                 : 
                                 (
@@ -92,6 +117,22 @@ const Comments = (props) => {
                         <main>
                             {mappedComments}
                         </main>
+                        <div>
+                            {editView 
+                                ? 
+                                (
+                                    <main>
+                                        <h1>Edit Comment</h1>
+                                        <textarea value={editContent}
+                                                  maxLength={250}
+                                                  onChange={(e) => setEditContent(e.target.value)}></textarea>
+                                        <button onClick={editComment}>Submit Change</button>
+                                        <button onClick={cancelEditView}>Cancel</button>
+                                        <button onClick={deleteComment}>Delete Comment</button>
+                                    </main>
+                                ) 
+                                : null}
+                        </div>
                     </div>
                 ) 
                 : 

@@ -28,7 +28,7 @@ const Header = (props) => {
             <Link to='/'><h1>SITE NAME</h1></Link>
             <nav>
                 <Link to='/about'><h3>About</h3></Link>
-                {!props.user.email 
+                {!props.user.user_id
                     ? 
                     (
                         <nav>

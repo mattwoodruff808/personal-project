@@ -23,7 +23,7 @@ module.exports = {
         const db = req.app.get('db');
 
         db.comment.edit_comment([content, commentId])
-            .then(comment => res.status(200).send(comment))
+            .then(() => res.sendStatus(200))
             .catch(err => res.status(500).send(err));
     },
     deleteComment: (req, res) => {
