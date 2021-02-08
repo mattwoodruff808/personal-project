@@ -82,7 +82,12 @@ const Comments = (props) => {
             <main>
                 <p>{el.date_created}</p>
                 <p>{el.content}</p>
-                <p onClick={() => toggleEditView(el.comment_id, el.content)}>edit</p>
+                {props.user.user_id === el.user_id 
+                    ? 
+                    (
+                        <p onClick={() => toggleEditView(el.comment_id, el.content)}>edit</p>
+                    ) 
+                    : null}
             </main>
         </section>
     })
