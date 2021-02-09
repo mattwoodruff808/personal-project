@@ -1,11 +1,11 @@
 import axios from 'axios';
-import {useState, useEffect} from 'react';
-import {connect} from 'react-redux';
-import {getUser} from '../../redux/userReducer';
+import { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { getUser } from '../../redux/userReducer';
+import Upload from './Upload/Upload';
 import './Profile.css';
 
 const Profile = (props) => {
-    const [urlInp, setUrlInp] = useState('');
     const [editPicView, setEditPicView] = useState(false);
     const [profilePic, setProfilePic] = useState('');
 
@@ -15,41 +15,36 @@ const Profile = (props) => {
 
     const toggleEditView = () => {
         setEditPicView(!editPicView);
-        setUrlInp('');
     }
 
-    const editProfilePic = () => {
-        const {user_id} = props.user;
+    // const editProfilePic = () => {
+    //     const { user_id } = props.user;
 
-        axios.put(`/api/profile-pic/${user_id}`, {newProfilePic: urlInp})
-            .then(res => {
-                getUser(res.data);
-                setUrlInp('');
-                toggleEditView();
-            })
-            .catch(err => console.log(err));
-    }
+    //     axios.put(`/api/profile-pic/${user_id}`, { newProfilePic: urlInp })
+    //         .then(res => {
+    //             getUser(res.data);
+    //             setUrlInp('');
+    //             toggleEditView();
+    //         })
+    //         .catch(err => console.log(err));
+    // }
 
     return (
         <section>
             <h1>Your Profile</h1>
-            <img src={profilePic}
-                 alt={props.user.username}/>
-            {editPicView 
-                ? 
+            {editPicView
+                ?
+                (
+                    <Upload 
+                        toggleFn={toggleEditView}/>
+                )
+                :
                 (
                     <div>
-                        <input 
-                            value={urlInp}
-                            placeholder='Enter URL Here'
-                            onChange={(e) => setUrlInp(e.target.value)}/>
-                        <button onClick={editProfilePic}>Submit</button>
-                        <button onClick={toggleEditView}>Cancel</button>
+                        <img src={profilePic}
+                             alt={props.user.username}/>
+                        <button onClick={toggleEditView}>Change Profile Picture</button>
                     </div>
-                ) 
-                : 
-                (
-                    <button onClick={toggleEditView}>Change Profile Picture</button>
                 )}
             <p>Username: {props.user.username}</p>
             <p>Email: {props.user.email}</p>
@@ -63,4 +58,4 @@ const mapStateToProps = reduxState => {
     }
 };
 
-export default connect(mapStateToProps, {getUser})(Profile);
+export default connect(mapStateToProps, { getUser })(Profile);
