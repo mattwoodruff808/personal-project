@@ -1,9 +1,9 @@
 import './Stripe.css';
 
-const Stripe = (props) => {
+const Stripe = () => {
     return (
         <section>
-            Stripe
+            
         </section>
     )
 }

@@ -11,7 +11,7 @@ const Profile = (props) => {
 
     useEffect(() => {
         setProfilePic(props.user.profile_pic);
-    }, [])
+    }, [props.user.profile_pic])
 
     const toggleEditView = () => {
         setEditPicView(!editPicView);

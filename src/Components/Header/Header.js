@@ -7,7 +7,6 @@ import './Header.css';
 import arrowSvg from './arrow_drop_down-24px.svg'
 
 const Header = (props) => {
-    // console.log(props)
     const [dropdownView, setDropdownView] = useState(false);
 
     const handleDropdown = () => {

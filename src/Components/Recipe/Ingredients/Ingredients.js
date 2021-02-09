@@ -3,8 +3,6 @@ import {getRecipe} from '../../../redux/recipeReducer';
 import './Ingredients.css';
 
 const Ingredients = (props) => {
-    console.log(props)
-
     let filteredIngredients = props.recipe.filter((el, i) => {
         return {
             key: i,
