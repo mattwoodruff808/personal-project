@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {connect} from 'react-redux';
 import {getUser, clearUser} from '../../redux/userReducer';
 import {Link} from 'react-router-dom';
@@ -18,7 +18,7 @@ const Header = (props) => {
             .then(() => {
                 props.clearUser();
                 handleDropdown();
-                props.history.push('/');
+                // props.history.push('/');
             })
             .catch(err => console.log(err));
     }

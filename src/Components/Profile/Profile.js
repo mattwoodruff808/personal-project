@@ -19,6 +19,7 @@ const Profile = (props) => {
 
     return (
         <section>
+            {console.log(props.user)}
             <h1>Your Profile</h1>
             {editPicView
                 ?
@@ -26,7 +27,7 @@ const Profile = (props) => {
                     <Upload 
                         toggleFn={toggleEditView}
                         userId={props.user.user_id}
-                        getUserFn={getUser}/>
+                        getUserFn={props.getUser}/>
                 )
                 :
                 (

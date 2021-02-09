@@ -31,6 +31,7 @@ massive({
 app.post('/api/register', authCtrl.register);
 app.post('/api/login', authCtrl.login);
 app.get('/api/logout', authCtrl.logout);
+app.get('/api/user', authCtrl.checkUser);
 
 //Recipe Endpoints
 app.get('/api/landing-recipe', recCtrl.getLandingRecipes);
