@@ -17,18 +17,6 @@ const Profile = (props) => {
         setEditPicView(!editPicView);
     }
 
-    // const editProfilePic = () => {
-    //     const { user_id } = props.user;
-
-    //     axios.put(`/api/profile-pic/${user_id}`, { newProfilePic: urlInp })
-    //         .then(res => {
-    //             getUser(res.data);
-    //             setUrlInp('');
-    //             toggleEditView();
-    //         })
-    //         .catch(err => console.log(err));
-    // }
-
     return (
         <section>
             <h1>Your Profile</h1>
@@ -36,7 +24,9 @@ const Profile = (props) => {
                 ?
                 (
                     <Upload 
-                        toggleFn={toggleEditView}/>
+                        toggleFn={toggleEditView}
+                        userId={props.user.user_id}
+                        getUserFn={getUser}/>
                 )
                 :
                 (
