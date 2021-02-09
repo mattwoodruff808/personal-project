@@ -18,6 +18,7 @@ const Header = (props) => {
         axios.get('/api/logout')
             .then(() => {
                 props.clearUser();
+                handleDropdown();
                 props.history.push('/');
             })
             .catch(err => console.log(err));
