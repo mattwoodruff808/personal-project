@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import {getRecipe} from '../../../redux/recipeReducer';
 import './Random.css';

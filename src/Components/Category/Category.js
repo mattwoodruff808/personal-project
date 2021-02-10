@@ -6,7 +6,6 @@ import './Category.css';
 import searchSvg from './image_search-24px.svg'
 
 const Category = (props) => {
-    // console.log(props)
     const [input, setInput] = useState('');
     const [filtered, setFiltered] = useState([]);
 

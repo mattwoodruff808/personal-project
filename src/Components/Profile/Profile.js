@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import { getUser } from '../../redux/userReducer';
+import {useState, useEffect} from 'react';
+import {connect} from 'react-redux';
+import {getUser} from '../../redux/userReducer';
 import Upload from './Upload/Upload';
 import './Profile.css';
 
@@ -49,4 +49,4 @@ const mapStateToProps = reduxState => {
     }
 };
 
-export default connect(mapStateToProps, { getUser })(Profile);
+export default connect(mapStateToProps, {getUser})(Profile);

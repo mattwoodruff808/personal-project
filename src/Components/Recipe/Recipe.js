@@ -5,8 +5,6 @@ import Comments from './Comments/Comments';
 import './Recipe.css';
 
 const Recipe = (props) => {
-    console.log(props)
-
     return (
         <section>
             <h1>{props.recipe.length > 0 && props.recipe[0].title}</h1>
