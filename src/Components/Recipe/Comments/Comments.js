@@ -82,7 +82,7 @@ const Comments = (props) => {
             <main>
                 <p>{el.date_created}</p>
                 <p>{el.content}</p>
-                {props.user.user_id === el.user_id 
+                {props.user && props.user.user_id === el.user_id 
                     ? 
                     (
                         <p onClick={() => toggleEditView(el.comment_id, el.content)}>edit</p>
@@ -94,7 +94,7 @@ const Comments = (props) => {
 
     return (
         <section>
-            {props.user.user_id 
+            {props.user 
                 ? 
                 (
                     <div>

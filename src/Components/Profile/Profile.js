@@ -1,4 +1,3 @@
-import axios from 'axios';
 import {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import {getUser} from '../../redux/userReducer';
@@ -12,7 +11,7 @@ const Profile = (props) => {
         if (!props.user){
             props.history.push('/');
         }
-    }, [props.user])
+    }, [props.user, props.history])
 
     const toggleEditView = () => {
         setEditPicView(!editPicView);

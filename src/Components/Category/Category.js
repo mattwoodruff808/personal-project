@@ -1,9 +1,8 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import {connect} from 'react-redux';
 import {getRecipe} from '../../redux/recipeReducer';
 import Options from './Options/Options';
 import './Category.css';
-import searchSvg from './image_search-24px.svg'
 
 const Category = (props) => {
     const [input, setInput] = useState('');
