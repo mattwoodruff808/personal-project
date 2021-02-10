@@ -38,7 +38,7 @@ class Header extends Component {
                 <Link to='/'><h1>The Simple Things</h1></Link>
                 <nav>
                     <Link to='/about'><h3>About</h3></Link>
-                    {!this.props.user.user_id
+                    {!this.props.user
                         ? 
                         (
                             <nav>

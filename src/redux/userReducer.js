@@ -1,5 +1,5 @@
 const initialState = {
-    user: {}
+    user: null
 }
 
 
@@ -17,7 +17,7 @@ export function getUser(userObj){
 export function clearUser(){
     return {
         type: CLEAR_USER,
-        payload: {}
+        payload: null
     }
 }
 
