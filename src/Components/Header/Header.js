@@ -14,10 +14,6 @@ class Header extends Component {
         }
     }
 
-    componentDidMount(){
-        
-    }
-
     handleDropdown = () => {
         this.setState({dropdownView: !this.state.dropdownView});
     }
@@ -34,8 +30,8 @@ class Header extends Component {
 
     render(){
         return (
-            <header>
-                <Link to='/'><h1>The Simple Things</h1></Link>
+            <header className='Header'>
+                <Link to='/' className='link'><h1>The Simple Things</h1></Link>
                 <nav>
                     <Link to='/about'><h3>About</h3></Link>
                     {!this.props.user

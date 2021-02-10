@@ -7,15 +7,11 @@ import routes from './routes';
 import './App.css';
 
 class App extends Component {
-  constructor(props){
-    super(props);
-  }
 
   componentDidMount(){
     axios.get('/api/user')
       .then(res => {
         this.props.getUser(res.data);
-        console.log(res.data)
       })
   }
 

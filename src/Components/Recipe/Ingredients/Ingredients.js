@@ -20,7 +20,7 @@ const Ingredients = (props) => {
     return (
         <section>
             <img src={props.recipe.length > 0 && props.recipe[0].recipe_pic}  
-                 alt={props.recipe.length > 0 && props.recipe[0].title}/>
+                 alt=''/>
             <section>
                 <h3>Ingredients</h3>
                 {mappedFiltered}

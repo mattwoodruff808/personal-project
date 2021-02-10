@@ -14,7 +14,7 @@ const Comments = (props) => {
 
     useEffect(() => {
         getComments(props.recipe.length > 0 ? props.recipe[0].recipe_id : null);
-    }, [props.recipe.length > 0 ? props.recipe[0].recipe_id : null]);
+    });
 
     const getComments = (recipeId) => {
         axios.get(`/api/comments/${recipeId}`)
