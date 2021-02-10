@@ -51,7 +51,7 @@ class Upload extends Component {
         // THEN DO SOMETHING WITH THE URL. SEND TO DB USING POST REQUEST OR SOMETHING
         axios.put(`/api/profile-pic/${this.props.userId}`, {newProfilePic: this.state.url})
             .then(res => {
-                this.props.getUserFn(res.data);
+                // this.props.getUserFn(res.data);
             })
             .catch(err => console.log(err));
       })

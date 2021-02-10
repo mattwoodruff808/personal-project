@@ -24,9 +24,9 @@ const Profile = (props) => {
             {editPicView
                 ?
                 (
-                    <Upload 
-                        toggleFn={toggleEditView}
+                    <Upload
                         userId={props.user.user_id}
+                        toggleFn={toggleEditView}
                         getUserFn={props.getUser}/>
                 )
                 :

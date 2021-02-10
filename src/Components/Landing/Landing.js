@@ -22,7 +22,7 @@ const Landing = (props) => {
     return (
         <section>
             <header>
-                <h1>WELCOME TO SITE NAME</h1>
+                <h1>WELCOME TO The Simple Things</h1>
             </header>
             <main>
                 <aside>
