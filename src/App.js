@@ -15,6 +15,7 @@ class App extends Component {
     axios.get('/api/user')
       .then(res => {
         this.props.getUser(res.data);
+        console.log(res.data)
       })
   }
 
