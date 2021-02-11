@@ -20,10 +20,12 @@ const Random = (props) => {
     }
 
     let mappedRand = rand.map((el, i) => {
-        return <main key={i}>
-                  <img src={el.recipe_pic} alt={el.title} onClick={() => handleDirection(el.recipe_id)} />
-                  <h2>{el.title}</h2>
-                  <h3 onClick={() => handleDirection(el.recipe_id)}>{el.blurb}</h3>
+        return <main key={i} onClick={() => handleDirection(el.recipe_id)}>
+                  <img src={el.recipe_pic} alt={el.title} />
+                  <div>
+                    <h2 className='rand-title'>{el.title}</h2>
+                    <h3 className='rand-blurb'>{el.blurb}</h3>
+                  </div>
                </main>
     })
 

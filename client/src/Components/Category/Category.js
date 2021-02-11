@@ -42,7 +42,7 @@ const Category = (props) => {
     }
 
     return (
-        <section>
+        <section className='Category'>
             {props.category.length > 0 && props.category[0].category
                 ? 
                 (

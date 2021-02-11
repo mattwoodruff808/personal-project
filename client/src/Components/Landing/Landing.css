@@ -24,10 +24,34 @@
 .Landing > main {
     display: flex;
     flex-direction: row;
+    /* padding: 50px 200px; */
+    padding: 50px 18%;
 }
 
 aside {
     height: 200px;
     width: 200px;
     border: 1px solid black;
+    box-shadow: 0px 2px 10px darkgray;
+    margin-left: 35px;
+    border-radius: 5px;
+    /* background-color: #eed9ce; */
+    /* background-color: #ddd2cb; */
+    background-color: #eeecea;
+}
+
+aside > h3 {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+aside > ul {
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+aside > ul > li {
+    cursor: pointer;
 }

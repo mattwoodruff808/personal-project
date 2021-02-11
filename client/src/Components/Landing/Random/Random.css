@@ -1,3 +1,46 @@
 .Random {
     width: 75%;
 }
+
+.Random > h3 {
+    font-size: 25px;
+}
+
+.Random > main {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+    margin: 35px 0;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.Random > main:hover {
+    transform: scale(1.015);
+}
+
+.Random > main > img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.Random > main > div {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 15px;
+}
+
+.rand-title {
+    font-weight: bold;
+}
+
+.rand-blurb {
+    margin-top: 10px;
+}
