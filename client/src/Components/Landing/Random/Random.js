@@ -22,12 +22,13 @@ const Random = (props) => {
     let mappedRand = rand.map((el, i) => {
         return <main key={i}>
                   <img src={el.recipe_pic} alt={el.title} onClick={() => handleDirection(el.recipe_id)} />
+                  <h2>{el.title}</h2>
                   <h3 onClick={() => handleDirection(el.recipe_id)}>{el.blurb}</h3>
                </main>
     })
 
     return (
-        <section>
+        <section className='Random'>
             <h3>Try Something New!</h3>
             {mappedRand}
         </section>

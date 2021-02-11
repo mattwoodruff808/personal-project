@@ -18,6 +18,12 @@ class Header extends Component {
         this.setState({dropdownView: !this.state.dropdownView});
     }
 
+    closeDropdown = () => {
+        if (this.state.dropdownView === true){
+            return this.setState({dropdownView: false})
+        }
+    }
+
     handleLogout = () => {
         axios.get('/api/logout')
             .then(() => {
@@ -31,9 +37,9 @@ class Header extends Component {
     render(){
         return (
             <header className='Header'>
-                <Link to='/' className='link'><h1>The Simple Things</h1></Link>
+                <Link to='/' className='link' onClick={this.closeDropdown}><h1>The Simple Things</h1></Link>
                 <nav>
-                    <Link to='/about' className='link'><h3>About</h3></Link>
+                    <Link to='/about' className='link' onClick={this.closeDropdown}><h3>About</h3></Link>
                     <h1>|</h1>
                     {!this.props.user
                         ? 

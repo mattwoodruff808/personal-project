@@ -22,9 +22,12 @@ const Landing = (props) => {
     return (
         <section className='Landing'>
             <header>
-                <h1>WELCOME TO The Simple Things</h1>
+                <h1 className='first-text'>welcome to</h1>
+                <h1>The Simple Things</h1>
             </header>
             <main>
+                <Random 
+                    pushFn={props.history.push}/>
                 <aside>
                     <h3>Categories</h3>
                     <ul>
@@ -33,8 +36,6 @@ const Landing = (props) => {
                         <li name='brazilian' onClick={handleBrazilian}>Brazilian</li>
                     </ul>
                 </aside>
-                <Random 
-                    pushFn={props.history.push}/>
             </main>
         </section>
     )
