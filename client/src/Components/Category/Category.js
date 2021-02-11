@@ -7,23 +7,7 @@ import './Category.css';
 const Category = (props) => {
     const [input, setInput] = useState('');
     const [filtered, setFiltered] = useState([]);
-
-    let mappedRecipes = props.category.map((el, i) => {
-        return <Options key={i}
-                        recipeId={el.recipe_id}
-                        recipePic={el.recipe_pic}
-                        title={el.title}
-                        pushFn={props.history.push}/>
-    });
-
-    let filteredRecipes = filtered.map((el, i) => {
-        return <Options key={i}
-                        recipeId={el.recipe_id}
-                        recipePic={el.recipe_pic} 
-                        title={el.title}
-                        pushFn={props.history.push}/>
-    });
-
+    
     const filterRecipes = (searchInp) => {
         let filteredGroup = [];
 
@@ -41,6 +25,22 @@ const Category = (props) => {
         setInput('');
     }
 
+    let mappedRecipes = props.category.map((el, i) => {
+        return <Options key={i}
+                        recipeId={el.recipe_id}
+                        recipePic={el.recipe_pic}
+                        title={el.title}
+                        pushFn={props.history.push}/>
+    });
+
+    let filteredRecipes = filtered.map((el, i) => {
+        return <Options key={i}
+                        recipeId={el.recipe_id}
+                        recipePic={el.recipe_pic} 
+                        title={el.title}
+                        pushFn={props.history.push}/>
+    });
+
     return (
         <section className='Category'>
             {props.category.length > 0 && props.category[0].category
@@ -52,13 +52,16 @@ const Category = (props) => {
                 (
                     <h1>All Recipes</h1>
                 )}
-            <input
-                value={input}
-                placeholder='Enter Recipe'
-                onChange={(e) => setInput(e.target.value)}/>
-            <button onClick={() => filterRecipes(input)}>Search Recipes</button>
-            <button onClick={clearSearch}>Clear Search</button>
-           {filtered[0]
+            <div className='search'>
+                <input
+                    value={input}
+                    placeholder='Enter Recipe'
+                    onChange={(e) => setInput(e.target.value)}/>
+                <button className='search-btn' onClick={() => filterRecipes(input)}>Search Recipes</button>
+                <button onClick={clearSearch}>Clear Search</button>
+            </div>
+            <div className='search-flex'>
+            {filtered[0]
                 ? 
                 (
                     filteredRecipes
@@ -67,6 +70,7 @@ const Category = (props) => {
                 (
                     mappedRecipes
                 )}
+            </div>
         </section>
     )
 }

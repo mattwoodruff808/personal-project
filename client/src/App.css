@@ -10,3 +10,21 @@
   text-decoration: none;
   color: black;
 }
+
+input {
+  height: 20px;
+  width: 200px;
+  text-align: center;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 5px;
+}
+
+button {
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  background-color: #eeecea;
+  cursor: pointer;
+}
