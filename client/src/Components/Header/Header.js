@@ -33,25 +33,26 @@ class Header extends Component {
             <header className='Header'>
                 <Link to='/' className='link'><h1>The Simple Things</h1></Link>
                 <nav>
-                    <Link to='/about'><h3>About</h3></Link>
+                    <Link to='/about' className='link'><h3>About</h3></Link>
+                    <h1>|</h1>
                     {!this.props.user
                         ? 
                         (
                             <nav>
-                                <Link to='/auth'><h3>Login</h3></Link>
+                                <Link to='/auth' className='link'><h3>Login</h3></Link>
                             </nav>
                         )
                         : 
                         (
-                            <nav>
-                                <img src={this.props.user.profile_pic} alt={this.props.user.username} />
+                            <nav className='authenticated'>
+                                <img src={this.props.user.profile_pic} alt={this.props.user.username} className='head-pic'/>
                                 <h3>{this.props.user.username}</h3>
                                 <img src={arrowSvg} alt='dropdown-arrow' onClick={this.handleDropdown} />
                                 {this.state.dropdownView 
                                     ? 
                                     (
-                                        <nav>
-                                            <Link to='/profile'><h3 onClick={this.handleDropdown}>Profile</h3></Link>
+                                        <nav className='head-dropdown'>
+                                            <Link to='/profile' className='link'><h3 onClick={this.handleDropdown}>Profile</h3></Link>
                                             <h3 onClick={this.handleLogout}>Logout</h3>
                                         </nav>
                                     ) 

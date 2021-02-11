@@ -20,7 +20,7 @@ const Landing = (props) => {
     }
 
     return (
-        <section>
+        <section className='Landing'>
             <header>
                 <h1>WELCOME TO The Simple Things</h1>
             </header>
