@@ -24,7 +24,6 @@
 .Landing > main {
     display: flex;
     flex-direction: row;
-    /* padding: 50px 200px; */
     padding: 50px 18%;
 }
 
@@ -35,8 +34,6 @@ aside {
     box-shadow: 0px 2px 10px darkgray;
     margin-left: 35px;
     border-radius: 5px;
-    /* background-color: #eed9ce; */
-    /* background-color: #ddd2cb; */
     background-color: #eeecea;
 }
 

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import {getUser} from '../../redux/userReducer';
 import './Auth.css';
@@ -10,6 +10,14 @@ const Auth = (props) => {
     const [password, setPassword] = useState('');
     const [verPassword, setVerPassword] = useState('');
     const [registerView, setRegisterView] = useState(false);
+    const [rand, setRand] = useState([]);
+
+    useEffect(() => {
+        axios.get('/api/landing-recipe')
+            .then(res => {
+                setRand(res.data);
+            })
+    }, []);
 
     const handleToggle = () => {
         setRegisterView(!registerView);
@@ -39,61 +47,72 @@ const Auth = (props) => {
             .catch(err=> console.log(err));
     }
 
+    let mappedRand = rand.map((el, i) => {
+        return <section key={i}>
+                  <img src={el.recipe_pic} alt={el.title} />
+               </section>
+    })
+
     return (
-        <section>
-            {registerView 
-                ? 
-                (
-                    <h1>Register Account</h1>
-                ) 
-                : 
-                (
-                    <h1>Account Login</h1>
-                )}
-            <input 
-                value={email}
-                placeholder='Enter Email'
-                onChange={(e) => setEmail(e.target.value)}/>
-            {registerView 
-                ? 
-                (
-                    <input 
-                        value={username}
-                        placeholder='Choose Username'
-                        onChange={(e) => setUsername(e.target.value)}/>
-                ) : null}
-            <input 
-                value={password}
-                type='password'
-                placeholder='Enter Password'
-                onChange={(e) => setPassword(e.target.value)}/>
-            {registerView 
-                ? 
-                (
-                    <input 
-                        value={verPassword}
-                        type='password'
-                        placeholder='Re-Enter Password'
-                        onChange={(e) => setVerPassword(e.target.value)}/>
-                ) : null}
-            {registerView 
-                ? 
-                (
-                    <button onClick={handleRegister}>Register</button>
-                ) 
-                : 
-                (
-                    <button onClick={handleLogin}>Login</button>
-                )}
-            {registerView 
-                ? 
-                (
-                    <p>Have an account already? <span onClick={handleToggle}>Login here.</span></p>
-                ) 
-                : 
-                (
-                    <p>Don't have an account? <span onClick={handleToggle}>Register here.</span></p>
-                )}
+        <section className='Auth'>
+            <div className='auth-cont'>
+                {registerView 
+                    ? 
+                    (
+                        <h1>Register Account</h1>
+                    ) 
+                    : 
+                    (
+                        <h1>Account Login</h1>
+                    )}
+                <input 
+                    value={email}
+                    placeholder='Enter Email'
+                    onChange={(e) => setEmail(e.target.value)}/>
+                {registerView 
+                    ? 
+                    (
+                        <input 
+                            value={username}
+                            placeholder='Choose Username'
+                            onChange={(e) => setUsername(e.target.value)}/>
+                    ) : null}
+                <input 
+                    value={password}
+                    type='password'
+                    placeholder='Enter Password'
+                    onChange={(e) => setPassword(e.target.value)}/>
+                {registerView 
+                    ? 
+                    (
+                        <input 
+                            value={verPassword}
+                            type='password'
+                            placeholder='Re-Enter Password'
+                            onChange={(e) => setVerPassword(e.target.value)}/>
+                    ) : null}
+                {registerView 
+                    ? 
+                    (
+                        <button onClick={handleRegister}>Register</button>
+                    ) 
+                    : 
+                    (
+                        <button onClick={handleLogin}>Login</button>
+                    )}
+                {registerView 
+                    ? 
+                    (
+                        <p>Have an account already? <span onClick={handleToggle}>Login here.</span></p>
+                    ) 
+                    : 
+                    (
+                        <p>Don't have an account? <span onClick={handleToggle}>Register here.</span></p>
+                    )}
+            </div>
+            <div className='auth-flex'>
+                {mappedRand}
+            </div>
         </section>
     )
 }
