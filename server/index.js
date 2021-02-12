@@ -8,7 +8,7 @@ const express = require('express'),
       comCtrl = require('./controllers/commentController'),
       profCtrl = require('./controllers/profileController'),
       upCtrl = require('./controllers/uploadController'),
-      {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
+      {PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
       app = express();
 
 app.use(express.json());
@@ -51,4 +51,4 @@ app.put('/api/profile-pic/:userId', auth.usersOnly, profCtrl.changeProfilePic);
 //Upload Endpoints
 app.get('/api/signs3', upCtrl.upload);
 
-app.listen(SERVER_PORT, () => console.log(`Server is cooking up on port ${SERVER_PORT}`));
+app.listen(PORT, () => console.log(`Server is cooking up on port ${PORT}`));
