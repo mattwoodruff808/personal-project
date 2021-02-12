@@ -1,0 +1,14 @@
+.Info {
+    margin-top: 50px;
+    width: 977px;
+}
+
+.Info > h3 {
+    font-size: 22px;
+}
+
+.Info > p {
+    text-align: left;
+    font-size: 18px;
+    margin: 30px 0;
+}

@@ -9,9 +9,9 @@ const Options = (props) => {
     }
 
     return (
-        <section className='Options'>
-            <img src={props.recipePic} alt={props.title} onClick={() => handleDirection(props.recipeId)}/>
-            <h3 onClick={() => handleDirection(props.recipeId)}>{props.title}</h3>
+        <section className='Options' onClick={() => handleDirection(props.recipeId)}>
+            <img src={props.recipePic} alt={props.title}/>
+            <h3>{props.title}</h3>
         </section>
     )
 }

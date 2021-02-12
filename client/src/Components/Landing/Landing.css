@@ -27,7 +27,7 @@
     padding: 50px 18%;
 }
 
-aside {
+.side-menu {
     height: 200px;
     width: 200px;
     border: 1px solid black;
@@ -37,18 +37,18 @@ aside {
     background-color: #eeecea;
 }
 
-aside > h3 {
+.side-menu > h3 {
     font-size: 20px;
     margin: 15px 0;
 }
 
-aside > ul {
+.side-menu > ul {
     height: 130px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-aside > ul > li {
+.side-menu > ul > li {
     cursor: pointer;
 }

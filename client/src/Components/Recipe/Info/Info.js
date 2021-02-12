@@ -4,7 +4,7 @@ import './Info.css';
 
 const Info = (props) => {
     return (
-        <section>
+        <section className='Info'>
             <h3>Instructions</h3>
             <p>{props.recipe.length > 0 && props.recipe[0].instructions}</p>
             <h3>Background</h3>

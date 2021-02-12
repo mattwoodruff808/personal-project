@@ -28,7 +28,7 @@ const Landing = (props) => {
             <main>
                 <Random 
                     pushFn={props.history.push}/>
-                <aside>
+                <aside className='side-menu'>
                     <h3>Categories</h3>
                     <ul>
                         <li name={null} onClick={handleAllRecipes}>All Recipes</li>

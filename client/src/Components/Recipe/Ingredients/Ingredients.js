@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import {getRecipe} from '../../../redux/recipeReducer';
 import './Ingredients.css';
+import cupSvg from './kitchen-measuringcup.svg';
 
 const Ingredients = (props) => {
     let filteredIngredients = props.recipe.filter((el, i) => {
@@ -12,8 +13,9 @@ const Ingredients = (props) => {
     })
 
     let mappedFiltered = filteredIngredients.map((el, i) => {
-        return <section key={i}>
-            <p>{el.measurement} - {el.ingredient}</p>
+        return <section key={i} className='ing-flex'>
+            <img src={cupSvg} alt=''/>
+            <p>{el.measurement}, {el.ingredient}</p>
         </section>
     })
 

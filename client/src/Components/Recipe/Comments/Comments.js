@@ -93,34 +93,43 @@ const Comments = (props) => {
     })
 
     return (
-        <section>
+        <section className='Comments'>
             {props.user 
                 ? 
                 (
                     <div>
-                        <header>
-                            <section>
+                        <header className='comment-head'>
+                            <section className='comment-text'>
                                 <h3>Comments</h3>
                                 <p>Feel free to share memories or variations of the recipe</p>
                             </section>
                             {!addView 
                                 ? 
                                 (
-                                    <button onClick={toggleAddView}>Add Comment</button>
+                                    <button className='add-btn' onClick={toggleAddView}>Add Comment</button>
                                 ) 
                                 : 
                                 (
-                                    <section>
+                                    <section className='add-comment'>
                                         <textarea maxLength={250}
                                                   value={input}
                                                   placeholder='Enter comment here'
                                                   onChange={(e) => setInput(e.target.value)}></textarea>
                                         <button onClick={handleAdd}>Submit</button>
+                                        <button onClick={toggleAddView}>Cancel</button>
                                     </section>
                                 )}
                         </header>
-                        <main>
-                            {mappedComments}
+                        <main className='comments-main'>
+                            {!comments[0] 
+                                ? 
+                                (
+                                    <p>Be the first to add a comment!</p>
+                                ) 
+                                : 
+                                (
+                                    mappedComments
+                                )}
                         </main>
                         <div>
                             {editView 
