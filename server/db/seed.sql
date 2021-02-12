@@ -34,7 +34,7 @@ CREATE TABLE ingredient (
 CREATE TABLE comment (
     comment_id SERIAL PRIMARY KEY,
     content VARCHAR(250),
-    date_created TIMESTAMP,
+    date_created TIMESTAMP WITH TIME ZONE,
     user_id INT REFERENCES auth_user(user_id),
     recipe_id INT REFERENCES recipe(recipe_id)
 );

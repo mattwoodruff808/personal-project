@@ -33,12 +33,148 @@
 
 .add-comment {
     position: fixed;
-    bottom: 0px;
-    right: 0px;
+    top: 100px;
+    left: 0px;
+    height: 100vh;
+    width: 100%;
+    background-color: gray;
+    /* background-color: white; */
+    opacity: 0.7;
+}
+
+.add-com-container {
+    position: fixed;
+    bottom: 250px;
+    right: 395px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 350px;
+    width: 700px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #eeecea;
+}
+
+.add-com-container > h2 {
+    font-size: 22px;
+}
+
+.add-com-container > textarea {
+    outline: none;
+    border-radius: 5px;
+    height: 200px;
+    width: 500px;
+}
+
+.add-com-container > button {
+    background-color: white;
+    height: 30px;
+    font-size: 16px;
 }
 
 .comments-main > p {
     margin-top: 40px;
+}
+
+.each-comment {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.each-comment > aside {
+    margin-right: 15px;
+}
+
+.each-comment > aside > img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-bottom: 3px;
+}
+
+.each-comment > aside > p {
+    height: 20px;
+    width: 100px;
+    box-sizing: border-box;
+}
+
+.each-comment > main {
+    border: 1px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: 100px;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 10px;
+    /* background-color: #eeecea; */
+    background-color: #f8ebe4;
+    margin-right: 20px;
+}
+
+.each-comment > main > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.each-comment > main > p {
+    text-align: left;
+}
+
+.edit-btn {
+    cursor: pointer;
+}
+
+.edit-comment {
+    position: fixed;
+    top: 100px;
+    left: 0px;
+    height: 100vh;
+    width: 100%;
+    background-color: gray;
+    /* background-color: white; */
+    opacity: 0.7;
+}
+
+.edit-com-container {
+    position: fixed;
+    bottom: 250px;
+    right: 395px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 350px;
+    width: 700px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #eeecea;
+}
+
+.edit-com-container > h2 {
+    font-size: 22px;
+}
+
+.edit-com-container > textarea {
+    outline: none;
+    border-radius: 5px;
+    height: 100px;
+    width: 500px;
+}
+
+.edit-com-container > button {
+    background-color: white;
+    height: 30px;
+    font-size: 16px;
 }

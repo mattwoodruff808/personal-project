@@ -74,20 +74,22 @@ const Comments = (props) => {
     }
 
     let mappedComments = comments.map((el, i) => {
-        return <section key={i}>
+        return <section key={i} className='each-comment'>
             <aside>
                 <img src={el.profile_pic} alt={el.username}/>
                 <p>{el.username}</p>
             </aside>
             <main>
-                <p>{el.date_created}</p>
+                <div>
+                    <p>{el.date_created}</p>
+                    {props.user && props.user.user_id === el.user_id 
+                        ? 
+                        (
+                            <p className='edit-btn' onClick={() => toggleEditView(el.comment_id, el.content)}>edit</p>
+                        ) 
+                        : null}
+                </div>
                 <p>{el.content}</p>
-                {props.user && props.user.user_id === el.user_id 
-                    ? 
-                    (
-                        <p onClick={() => toggleEditView(el.comment_id, el.content)}>edit</p>
-                    ) 
-                    : null}
             </main>
         </section>
     })
@@ -110,14 +112,18 @@ const Comments = (props) => {
                                 ) 
                                 : 
                                 (
-                                    <section className='add-comment'>
-                                        <textarea maxLength={250}
-                                                  value={input}
-                                                  placeholder='Enter comment here'
-                                                  onChange={(e) => setInput(e.target.value)}></textarea>
-                                        <button onClick={handleAdd}>Submit</button>
-                                        <button onClick={toggleAddView}>Cancel</button>
-                                    </section>
+                                    <>
+                                        <div className='add-comment'></div>
+                                        <section className='add-com-container'>
+                                            <h2>Add Comment</h2>
+                                            <textarea maxLength={250}
+                                                    value={input}
+                                                    placeholder='Enter comment here'
+                                                    onChange={(e) => setInput(e.target.value)}></textarea>
+                                            <button onClick={handleAdd}>Submit</button>
+                                            <button onClick={toggleAddView}>Cancel</button>
+                                        </section>
+                                    </>
                                 )}
                         </header>
                         <main className='comments-main'>
@@ -135,8 +141,10 @@ const Comments = (props) => {
                             {editView 
                                 ? 
                                 (
-                                    <main>
-                                        <h1>Edit Comment</h1>
+                                    <>
+                                    <div className='edit-comment'></div>
+                                    <main className='edit-com-container'>
+                                        <h2>Edit Comment</h2>
                                         <textarea value={editContent}
                                                   maxLength={250}
                                                   onChange={(e) => setEditContent(e.target.value)}></textarea>
@@ -144,6 +152,7 @@ const Comments = (props) => {
                                         <button onClick={cancelEditView}>Cancel</button>
                                         <button onClick={deleteComment}>Delete Comment</button>
                                     </main>
+                                    </>
                                 ) 
                                 : null}
                         </div>
@@ -151,7 +160,7 @@ const Comments = (props) => {
                 ) 
                 : 
                 (
-                    <p>Please login to view Comments</p>
+                    <p>Please log-in to view Comments</p>
                 )}
         </section>
     )
