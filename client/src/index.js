@@ -7,12 +7,14 @@ import axios from 'axios';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ScrollToTop from './Components/ScrollToTop';
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <HashRouter>
+        <ScrollToTop />
         <App />
       </HashRouter>
     </Provider>
