@@ -15,7 +15,6 @@
 .About > main {
     display: flex;
     flex-direction: row;
-    /* justify-content: center; */
     width: 1000px;
 }
 
@@ -32,4 +31,36 @@
     margin-left: 30px;
     margin-bottom: 15px;
     text-align: left;
+}
+
+@media(max-width: 852px){
+    .About > main {
+        flex-direction: column;
+        align-items: center;
+        width: 750px;
+    }
+
+    .About > main > img {
+        margin-right: 0px;
+        margin-bottom: 50px;
+    }
+}
+
+@media(max-width: 660px){
+    .About > main {
+        flex-direction: column;
+        align-items: center;
+        width: 600px;
+    }
+
+    .About > main > img {
+        height: 200px;
+        width: 350px;
+        margin-right: 0px;
+        margin-bottom: 50px;
+    }
+
+    .about-text > p {
+        font-size: 17px;
+    }
 }

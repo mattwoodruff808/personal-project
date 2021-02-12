@@ -32,3 +32,25 @@
     height: 15px;
     margin-right: 15px;
 }
+
+@media(max-width: 852px){
+    .Ingredients {
+        flex-direction: column;
+    }
+
+    .Ingredients > img {
+        margin-bottom: 50px;
+        margin-right: 0px;
+    }
+
+    .Ingredients > section {
+        margin-left: 0px;
+    }
+}
+
+@media(max-width: 660px){
+    .Ingredients > img {
+        height: 200px;
+        width: 350px;
+    }
+}

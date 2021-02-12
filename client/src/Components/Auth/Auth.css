@@ -64,3 +64,25 @@
     object-fit: cover;
     border-radius: 5px;
 }
+
+@media(max-width: 852px){
+    .auth-flex > section > img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .auth-cont {
+        width: 450px;
+    }
+}
+
+@media(max-width: 660px){
+    .auth-flex > section > img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .auth-cont {
+        width: 400px;
+    }
+}

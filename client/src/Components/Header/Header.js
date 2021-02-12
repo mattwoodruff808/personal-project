@@ -38,7 +38,7 @@ class Header extends Component {
         return (
             <header className='Header'>
                 <Link to='/' className='link' onClick={this.closeDropdown}><h1>The Simple Things</h1></Link>
-                <nav>
+                <nav className='desktop-nav'>
                     <Link to='/about' className='link' onClick={this.closeDropdown}><h3>About</h3></Link>
                     <h1>|</h1>
                     {!this.props.user
@@ -66,6 +66,27 @@ class Header extends Component {
                             </nav>
                         )}
                 </nav>
+                <section className='mobile-menu-icon' onClick={this.handleDropdown}>MENU</section>
+                {this.state.dropdownView 
+                    ? 
+                    (
+                        <section className='mobile-menu'>
+                            <Link to='/about' className='link' onClick={this.closeDropdown}><h3>About</h3></Link>
+                            {this.props.user 
+                                ? 
+                                (
+                                    <>
+                                        <Link to='/profile' className='link'><h3 onClick={this.handleDropdown}>Profile</h3></Link>
+                                        <h3 onClick={this.handleLogout}>Logout</h3>
+                                    </>
+                                ) 
+                                : 
+                                (
+                                    <Link to='/auth' className='link' onClick={this.closeDropdown}><h3>Login</h3></Link> 
+                                )}
+                        </section>
+                    ) 
+                    : null}
             </header>
         )
     }

@@ -30,3 +30,27 @@
     flex-wrap: wrap;
     margin-left: .5%;
 }
+
+@media(max-width: 852px){
+    .search-flex {
+        width: 750px;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 660px){
+    .search-btn {
+        margin: 0px;
+    }
+
+    .search {
+        height: 120px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .search > button {
+        height: 30px;
+    }
+}

@@ -12,3 +12,19 @@
     font-size: 18px;
     margin: 30px 0;
 }
+
+@media(max-width: 852px){
+    .Info {
+        width: 600px;
+    }
+}
+
+@media(max-width: 660px){
+    .Info {
+        width: 500px;
+    }
+
+    .Info > p {
+        font-size: 16px;
+    }
+}

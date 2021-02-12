@@ -23,7 +23,7 @@
 
 .Header > a {
     font-family: 'Dancing Script', cursive;
-    font-size: 35px;
+    font-size: 40px;
 }
 
 .Header > nav > a {
@@ -67,4 +67,39 @@
 
 .head-dropdown > h3 {
     cursor: pointer;
+}
+
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media(max-width: 660px){
+    .Header > nav {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: initial;
+        cursor: pointer;
+    }
+
+    .mobile-menu {
+        height: 100px;
+        width: 140px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: space-evenly;
+        border-radius: 5px;
+        box-sizing: border-box;
+        border: .5px solid black;
+        background-color: white;
+        position: fixed;
+        right: 60px;
+        top: 80px;
+    }
 }
