@@ -8,7 +8,7 @@ const express = require('express'),
       comCtrl = require('./controllers/commentController'),
       profCtrl = require('./controllers/profileController'),
       upCtrl = require('./controllers/uploadController'),
-      {PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
+      {PORT, DATABASE_URL, SESSION_SECRET} = process.env,
       app = express();
 
 app.use(express.json());
@@ -20,7 +20,7 @@ app.use(session({
 }))
 
 massive({
-    connectionString: CONNECTION_STRING,
+    connectionString: DATABASE_URL,
     ssl: {rejectUnauthorized: false}
 }).then(db => {
     app.set('db', db);
