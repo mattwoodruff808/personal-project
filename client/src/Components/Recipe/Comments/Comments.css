@@ -44,7 +44,8 @@
 .add-com-container {
     position: fixed;
     bottom: 250px;
-    right: 470px;
+    right: 395px;
+    /* right: 470px; */
     /* right: 29%; */
     /* right: 28vw; */
     display: flex;
@@ -148,7 +149,8 @@
 .edit-com-container {
     position: fixed;
     bottom: 250px;
-    right: 470px;
+    right: 395px;
+    /* right: 470px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
