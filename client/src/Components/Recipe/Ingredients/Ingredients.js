@@ -15,7 +15,7 @@ const Ingredients = (props) => {
     let mappedFiltered = filteredIngredients.map((el, i) => {
         return <section key={i} className='ing-flex'>
             <img src={cupSvg} alt=''/>
-            <p>{el.measurement}, {el.ingredient}</p>
+            <p>{el.measurement} {el.ingredient}</p>
         </section>
     })
 

@@ -51,9 +51,16 @@ class Header extends Component {
                         : 
                         (
                             <nav className='authenticated'>
-                                <img src={this.props.user.profile_pic} alt={this.props.user.username} className='head-pic'/>
-                                <h3>{this.props.user.username}</h3>
-                                <img className='head-dropdown-icon' src={arrowSvg} alt='dropdown-arrow' onClick={this.handleDropdown} />
+                                <img 
+                                    src={this.props.user.profile_pic} 
+                                    alt={this.props.user.username} 
+                                    className='head-pic' 
+                                    onClick={this.handleDropdown}/>
+                                <h3 onClick={this.handleDropdown}>{this.props.user.username}</h3>
+                                <img 
+                                    className='head-dropdown-icon' 
+                                    src={arrowSvg} alt='dropdown-arrow' 
+                                    onClick={this.handleDropdown} />
                                 {this.state.dropdownView 
                                     ? 
                                     (
