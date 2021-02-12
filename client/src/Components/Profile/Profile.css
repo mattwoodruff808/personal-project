@@ -1,0 +1,36 @@
+.Profile {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+}
+
+.prof-main > h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.pic-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.pic-flex > img {
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
+
+.pic-flex > button {
+    height: 40px;
+    font-size: 16px;
+}
+
+.prof-main > p {
+    font-size: 22px;
+    margin-bottom: 20px;
+}

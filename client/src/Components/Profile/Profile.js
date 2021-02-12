@@ -18,11 +18,11 @@ const Profile = (props) => {
     }
 
     return (
-        <section>
+        <section className='Profile'>
             {props.user 
                 && 
                 (
-                    <div>
+                    <div className='prof-main'>
                         <h1>Your Profile</h1>
                         {editPicView
                             ?
@@ -34,7 +34,7 @@ const Profile = (props) => {
                             )
                             :
                             (
-                                <div>
+                                <div className='pic-flex'>
                                     <img src={props.user.profile_pic}
                                          alt={props.user.username}/>
                                     <button onClick={toggleEditView}>Change Profile Picture</button>

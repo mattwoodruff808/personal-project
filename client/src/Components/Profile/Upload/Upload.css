@@ -1,9 +1,19 @@
-.App {
+.Upload {
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .Upload > h1 {
+    font-size: 22px;
+  }
+
+  .Upload > button {
+    height: 40px;
+    font-size: 16px;
+    margin-bottom: 30px;
   }
   
   .App-logo {

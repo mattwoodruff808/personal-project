@@ -72,12 +72,12 @@ class Upload extends Component {
   };
 
   render() {
-    const { url, isUploading } = this.state;
+    const { isUploading } = this.state;
     return (
-      <div className="App">
+      <div className='Upload'>
         <h1>Upload</h1>
-        <h1>{url}</h1>
-        <img src={url} alt="" width="450px" />
+        {/* <h1>{url}</h1> */}
+        {/* <img src={url} alt="" width="450px" /> */}
 
         <Dropzone
           onDropAccepted={this.getSignedRequest}
@@ -89,8 +89,9 @@ class Upload extends Component {
               position: 'relative',
               width: 160,
               height: 80,
-              borderWidth: 5,
-              marginTop: 25,
+              borderWidth: 3.5,
+              marginTop: 30,
+              marginBottom: 30,
               borderColor: 'gray',
               borderStyle: 'dashed',
               borderRadius: 5,
