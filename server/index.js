@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express'),
       session = require('express-session'),
       massive = require('massive'),
+      cors = require('cors'),
       authCtrl = require('./controllers/authController'),
       auth = require('./middleware/authMiddleware'),
       recCtrl = require('./controllers/recipeController'),
@@ -11,6 +12,7 @@ const express = require('express'),
       {PORT, DATABASE_URL, SESSION_SECRET} = process.env,
       app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(session({
     resave: false,
