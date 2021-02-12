@@ -6,9 +6,11 @@ import './Recipe.css';
 
 const Recipe = (props) => {
     return (
-        <section>
-            <h1>{props.recipe.length > 0 && props.recipe[0].title}</h1>
-            <p>{props.recipe.length > 0 && props.recipe[0].category}</p>
+        <section className='Recipe'>
+            <div>
+                <h1>{props.recipe.length > 0 && props.recipe[0].title}</h1>
+                <p>{props.recipe.length > 0 && props.recipe[0].category}</p>
+            </div>
             <Ingredients />
             <Info />
             <Comments />

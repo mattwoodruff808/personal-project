@@ -1,0 +1,15 @@
+.Recipe {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+}
+
+.Recipe > div {
+    margin-bottom: 30px;
+}
+
+.Recipe > div > h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}

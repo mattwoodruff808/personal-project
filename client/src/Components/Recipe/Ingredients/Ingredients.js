@@ -18,7 +18,7 @@ const Ingredients = (props) => {
     })
 
     return (
-        <section>
+        <section className='Ingredients'>
             <img src={props.recipe.length > 0 && props.recipe[0].recipe_pic}  
                  alt=''/>
             <section>
