@@ -49,6 +49,10 @@
     margin-right: 15px;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 .head-dropdown-icon {
     cursor: pointer;
 }

@@ -29,7 +29,6 @@ class Header extends Component {
             .then(() => {
                 this.props.clearUser();
                 this.handleDropdown();
-                // props.history.push('/');
             })
             .catch(err => console.log(err));
     }
@@ -56,7 +55,7 @@ class Header extends Component {
                                     alt={this.props.user.username} 
                                     className='head-pic' 
                                     onClick={this.handleDropdown}/>
-                                <h3 onClick={this.handleDropdown}>{this.props.user.username}</h3>
+                                <h3 className='pointer' onClick={this.handleDropdown}>{this.props.user.username}</h3>
                                 <img 
                                     className='head-dropdown-icon' 
                                     src={arrowSvg} alt='dropdown-arrow' 
