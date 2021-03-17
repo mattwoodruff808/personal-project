@@ -12,13 +12,19 @@ const express = require('express'),
       {PORT, DATABASE_URL, SESSION_SECRET} = process.env,
       app = express();
 
+app.set('trust proxy', 1)
 app.use(cors());
 app.use(express.json());
 app.use(session({
     resave: false,
     saveUninitialized: true,
     secret: SESSION_SECRET,
-    cookie: {maxAge: 1000 * 60 * 60 * 24 * 365}
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24 * 365,
+        httpOnly: true,
+        secure: true,
+        sameSite: 'none'
+    }
 }))
 
 massive({
